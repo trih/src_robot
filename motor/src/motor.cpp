@@ -18,12 +18,12 @@ BlackUART motor_Uart_R(UART4, myProp);
 void motorCallback(const std_msgs::String::ConstPtr& msg)
 {
 	ROS_INFO("I heard: [%s]", msg->data.c_str());
-	if (msg->data.c_str()=="Stop") {
+	if (msg->data=="Stop") {
                 motor_Uart_L.write("S");
                 motor_Uart_R.write("S");
 
 	}
-	else if (msg->data.c_str()=="Going") {
+	else if (msg->data=="Going") {
                 motor_Uart_L.write("G");
                 motor_Uart_R.write("G");
 

@@ -34,8 +34,9 @@ int main(int argc, char **argv)
                 trackingValue_bitset[T4] = t4Value.getNumericValue();
                 trackingValue_bitset[T5] = t5Value.getNumericValue();
 
+	
                 trackingValue.data = (int)trackingValue_bitset.to_ulong();
-
+		
                 chatter_pub.publish(trackingValue);
 
                 ros::spinOnce();

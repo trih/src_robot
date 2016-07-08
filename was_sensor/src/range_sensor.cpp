@@ -9,18 +9,12 @@
 // range = SLOPE x Voltage + INTERCEPTER, where:
 #define SLOPE        1
 #define INTERCEPTER  0
-/*
-void motorCallback(const std_msgs::String::ConstPtr& msg)
-{
-	ROS_INFO("I heard: [%s]", msg->data.c_str());
-}
-*/
+
 int main(int argc, char **argv)
 {
         ros::init(argc, argv, "WUS_range_sensor");
         ros::NodeHandle n;
         ros::Publisher chatter_pub = n.advertise<sensor_msgs::Range>("was_sensor/range/ultrasound", 1000);
-	//ros::Subscriber motor_sub = n.subscribe("motor", 1000, motorCallback);
         ros::Rate loop_rate(10);
 
         sensor_msgs::Range range_msg;
